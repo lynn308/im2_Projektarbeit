@@ -19,12 +19,7 @@ async function fetchData(url){
 const myData = await fetchData(API_URL);
 
 function populateDropdown() {
-    const types = [...new Set(myData.map(item => item.brewery_type).filter(type => type))]; // Filtere undefined oder null
-    const allOption = document.createElement("option");
-    allOption.value = "";
-    allOption.textContent = "Alle Brauereitypen";
-    dropdown.appendChild(allOption);
-
+    const types = [...new Set(myData.map(item => item.brewery_type))]; // Set entfernt Duplikate
     types.forEach(type => {
         const option = document.createElement("option");
         option.value = type;

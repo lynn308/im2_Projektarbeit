@@ -1,0 +1,67 @@
+.tap {
+    position: relative;
+    width: 200px;
+    height: 400px;
+    margin: auto;
+    background: #5c4033; /* Holzoptik-Hintergrund */
+    padding-top: 20px;
+    border-radius: 10px;
+  }
+  
+  /* Kopf des Zapfhahns */
+  .tap-head {
+    width: 60px;
+    height: 20px;
+    background: silver;
+    margin: auto;
+    border-radius: 10px;
+  }
+  
+  /* Hebel */
+  .tap-handle {
+    width: 20px;
+    height: 60px;
+    background: green;
+    margin: 10px auto;
+    border-radius: 4px;
+    transform-origin: top center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  
+  /* Hauptkörper */
+  .tap-body {
+    width: 40px;
+    height: 100px;
+    background: #888;
+    margin: 10px auto;
+    border-radius: 10px;
+  }
+  
+  /* Auslass des Zapfhahns */
+  .tap-nozzle {
+    width: 15px;
+    height: 20px;
+    background: #333;
+    margin: 5px auto;
+    border-radius: 5px;
+  }
+  
+  /* Bierstrom */
+  .beer-stream {
+    width: 8px;
+    height: 0;
+    background: gold;
+    margin: 0 auto;
+    transition: height 0.3s ease;
+  }
+  
+  /* Glas */
+  .glass {
+    width: 60px;
+    height: 80px;
+    margin: 10px auto;
+    border: 3px solid #ccc;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.05);
+  }
