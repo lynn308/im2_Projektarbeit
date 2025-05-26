@@ -91,12 +91,100 @@ main {
     transition: height 0.3s ease;
   }
   
-  /* Glas */
+  /* Bierglas */
   .glass {
-    width: 60px;
-    height: 80px;
-    margin: 10px auto;
-    border: 3px solid #ccc;
-    border-radius: 5px;
-    background: rgba(255, 255, 255, 0.05);
+    position: absolute;
+    bottom: -100px; /* unter dem Zapfhahn */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 224px;
+    height: 290px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 2;
   }
+  
+  .glass-outer {
+    position: absolute;
+    bottom: 0px; /* <- das ist ein guter Startwert */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 155px;
+    height: 271px;
+    z-index: 2;
+    
+  }
+  
+  
+  .glass-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 155px;
+    height: 29px;
+    z-index: 3;
+  }
+  
+  .glass-detail {
+    position: absolute;
+    z-index: 4;
+  }
+  
+  .glass-detail-1 {
+    top: 45px;     /* Position vertikal im Glas – feinjustieren */
+    left: 20px;    /* Horizontal im Glas zentriert/seitlich – feinjustieren */
+    width: 22px;
+    height: 171px;
+  }
+
+  .glass-detail-2 {
+    position: absolute;
+    top: 55px; /* vertikal feinjustieren */
+    left: 50%; /* zentrieren */
+    transform: translateX(-50%); /* exakt zentriert */
+    width: 22px;
+    height: 169px;
+    z-index: 4;
+  }
+  
+  .glass-detail-3 {
+    position: absolute;
+    top: 45px;         /* gleiche Höhe wie die anderen */
+    right: 16px;       /* Abstand von der rechten Seite */
+    width: 22px;
+    height: 171px;
+    z-index: 4;
+  }
+  
+  .glass-top {
+    position: absolute;
+    top: -30px; /* Wert anpassen je nach Glasposition */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 160px;
+    height: 68px;
+    z-index: 5;
+  }
+  
+  .glass-mouth {
+    position: absolute;
+    top: -27px; /* 👈 feinjustieren je nach Glasposition */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 155px;
+    height: 29px;
+    z-index: 6;
+  }
+  
+  .glass-handle {
+    position: absolute;
+    top: 320px;     /* vertikal feinjustieren */
+    right: -40px;    /* oder z. B. 5px – je nach Optik */
+    width: 88px;
+    height: 174px;
+    z-index: 1;    /* WICHTIG: hinter Glas (Glas hat z-index 2–6) */
+  }
+  
+  
