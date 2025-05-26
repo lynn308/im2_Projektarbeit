@@ -19,6 +19,9 @@ font-size: 96px;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
+text-align: center;
+  margin-bottom: 20px;
+
 }
 
 
@@ -26,7 +29,7 @@ line-height: normal;
   width: 200px;
   height: 558.5px;
   background: linear-gradient(270deg, #3C3C3C -21.25%, #BCBCBC 50.99%, #3C3C3C 118.75%);
-  border: none; /* ❗ Rand entfernen, damit Maße stimmen */
+  border: none;
   border-radius: 10px;
   position: relative;
   margin: auto;
@@ -51,14 +54,7 @@ line-height: normal;
 
 
   
-  /* Kopf des Zapfhahns */
-  .tap-head {
-    width: 60px;
-    height: 20px;
-    background: silver;
-    margin: auto;
-    border-radius: 10px;
-  }
+
   
   /* Hebel */
   .tap-handle {
@@ -72,32 +68,10 @@ line-height: normal;
     z-index: 10; 
   }
   
-  /* Hauptkörper */
-  .tap-body {
-    width: 40px;
-    height: 100px;
-    background: #888;
-    margin: 10px auto;
-    border-radius: 10px;
-  }
+ 
   
-  /* Auslass des Zapfhahns */
-  .tap-nozzle {
-    width: 15px;
-    height: 20px;
-    background: #333;
-    margin: 5px auto;
-    border-radius: 5px;
-  }
   
-  /* Bierstrom */
-  .beer-stream {
-    width: 8px;
-    height: 0;
-    background: gold;
-    margin: 0 auto;
-    transition: height 0.3s ease;
-  }
+ 
   
   /* Bierglas */
   .glass {
@@ -141,17 +115,17 @@ line-height: normal;
   }
   
   .glass-detail-1 {
-    top: 45px;     /* Position vertikal im Glas – feinjustieren */
-    left: 20px;    /* Horizontal im Glas zentriert/seitlich – feinjustieren */
+    top: 45px;     
+    left: 20px;    
     width: 22px;
     height: 171px;
   }
 
   .glass-detail-2 {
     position: absolute;
-    top: 55px; /* vertikal feinjustieren */
-    left: 50%; /* zentrieren */
-    transform: translateX(-50%); /* exakt zentriert */
+    top: 55px; 
+    left: 50%; 
+    transform: translateX(-50%); 
     width: 22px;
     height: 169px;
     z-index: 4;
@@ -159,8 +133,8 @@ line-height: normal;
   
   .glass-detail-3 {
     position: absolute;
-    top: 45px;         /* gleiche Höhe wie die anderen */
-    right: 16px;       /* Abstand von der rechten Seite */
+    top: 45px;         
+    right: 16px;       
     width: 22px;
     height: 171px;
     z-index: 4;
@@ -168,7 +142,7 @@ line-height: normal;
   
   .glass-top {
     position: absolute;
-    top: -30px; /* Wert anpassen je nach Glasposition */
+    top: -30px; 
     left: 50%;
     transform: translateX(-50%);
     width: 160px;
@@ -178,7 +152,7 @@ line-height: normal;
   
   .glass-mouth {
     position: absolute;
-    top: -27px; /* 👈 feinjustieren je nach Glasposition */
+    top: -27px; 
     left: 50%;
     transform: translateX(-50%);
     width: 155px;
@@ -188,128 +162,111 @@ line-height: normal;
   
   .glass-handle {
     position: absolute;
-    top: 320px;     /* vertikal feinjustieren */
-    right: -40px;    /* oder z. B. 5px – je nach Optik */
+    top: 320px;     
+    right: -40px;    
     width: 88px;
     height: 174px;
-    z-index: 1;    /* WICHTIG: hinter Glas (Glas hat z-index 2–6) */
+    z-index: 1;    
   }
   
   
 
-  body {
-    background-color: #2b5300;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
   
-  .nozzle-container {
-    position: relative;
-    width: 83px;
-    height: 140px;
-  }
-  
-  /* Oberer Ring */
-  .nozzle-top-ring {
+  .tap-circle {
     position: absolute;
-    top: 20.95px;
-    left: 0;
+    top: 70px; /* Passe diesen Wert ggf. an, je nach Position */
+    left: 50%;
+    transform: translateX(-50%);
     width: 83px;
     height: 83px;
-    background: radial-gradient(ellipse 40.97% 40.97% at 50% 50%, #9D9D9D 0%, #5B5B5B 100%);
-    border-radius: 9999px;
+    z-index: 2; /* damit es über dem Gehäuse liegt, aber unter anderen Zapfhahn-Teilen */
   }
   
-  /* Hauptkörper */
-  .nozzle-body {
+  .tap-spout {
     position: absolute;
-    top: 56.95px;
-    left: 21.37px;
-    width: 41.27px;
+    top: 110px; /* unterhalb des Kreises, ggf. anpassen */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 42px;
     height: 62px;
-    background: linear-gradient(90deg, #2E2E2E 0%, #C8C8C8 51%, #2E2E2E 100%);
+    z-index: 3;
   }
   
-  /* Unterer Schatten */
-  .nozzle-bottom-shadow {
+  .tap-opening {
     position: absolute;
-    top: 111.95px;
-    left: 28px;
+    top: 54px; /* leicht unter dem Ausfluss platzieren – ggf. anpassen */
+    left: 53%;
+    transform: translateX(-50%);
     width: 30px;
     height: 17px;
-    background: #8C8C8C;
-    border-radius: 9999px;
-  }
-  
-  /* Düsenöffnung */
-  .nozzle-bottom-inner {
-    position: absolute;
-    top: 114.95px;
-    left: 33px;
-    width: 20px;
-    height: 11px;
-    background: #454545;
-    border-radius: 9999px;
-  }
-  
-  /* Metallkragen */
-  .nozzle-ring-inner {
-    position: absolute;
-    top: 22.95px;
-    left: 23px;
-    width: 38.56px;
-    height: 26px;
-    background: linear-gradient(90deg, #656565 0%, #CBCBCB 48%, #656565 100%);
-  }
-  
-  /* Goldring oben */
-  .nozzle-ring-top {
-    position: absolute;
-    top: 0px;
-    left: 28.81px;
-    width: 28.16px;
-    height: 17.95px;
-    background: linear-gradient(180deg, #BD9043 0%, #57421F 100%);
-  }
-  
-  /* Goldring unten */
-  .nozzle-ring-bottom {
-    position: absolute;
-    top: 10.82px;
-    left: 23px;
-    width: 38.56px;
-    height: 19.13px;
-    background: linear-gradient(179deg, #BD9043 0%, #57421F 100%);
-  }
-  
-  /* Vordere Scheibe */
-  .nozzle-disk {
-    position: absolute;
-    top: 38.95px;
-    left: 21px;
-    width: 42px;
-    height: 42px;
-    background: radial-gradient(ellipse 50% 50% at 50% 50%, #CCCCCC 0%, #797979 100%);
-    border-radius: 9999px;
-  }
-  
-  /* Scheibenmitte */
-  .nozzle-disk-center {
-    position: absolute;
-    top: 47.95px;
-    left: 30px;
-    width: 24px;
-    height: 24px;
-    background: #AAAAAA;
-    border-radius: 9999px;
-  }
-
-  .tap .nozzle-container {
-    position: absolute;
-    top: 50px; /* Passe diesen Wert je nach Position optisch an */
-    left: 58px; /* zentriert unter dem Tap */
     z-index: 2;
   }
+
+  .tap-hole {
+    position: absolute;
+    top: 53px; /* minimal höher als die äußere Ellipse */
+    left: 53%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 11px;
+    z-index: 3; /* über der grauen Öffnung */
+  }
   
+  .tap-top-spout {
+    position: absolute;
+    top: 75px; /* leicht unterhalb des Kreises */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 39px;
+    height: 26px;
+    z-index: 3;
+  }
+  
+  .tap-center-button {
+    position: absolute;
+    top: 90px; /* auf Höhe des "tap-top-spout" – ggf. feinjustieren */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 42px;
+    height: 42px;
+    z-index: 4;
+  }
+  
+  .tap-center-inner {
+    position: absolute;
+    top: 9px; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 24px;
+    z-index: 5;
+  }
+  
+  .tap-connector-gold {
+    position: absolute;
+    top: -40px; /* etwa mittig auf dem großen Kreis */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 29px;
+    height: 18px;
+    z-index: 6; /* über dem kleinen Kreis, unter dem Griff */
+  }
+  
+  .tap-connector-gold-bottom {
+    position: absolute;
+    top: 10px; /* direkt unterhalb des vorherigen goldenen Elements */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 39px;
+    height: 20px;
+    z-index: 6; /* auf gleicher Ebene wie der obere goldene Teil */
+  }
+  
+  /*Dropdown Menu*/
+  #brewery-type-dropdown,
+#city-dropdown {
+  position: relative;
+  top: -100px; /* oder -80px je nach Bedarf */
+  margin: 0 5px;
+  z-index: 10;
+}

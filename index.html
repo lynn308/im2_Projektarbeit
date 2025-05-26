@@ -8,8 +8,9 @@
     <title>12 - Projekt</title>
 </head>
 <body>
+  
+  <h1>Find your Brewery in Ireland</h1>
 <main>
-<h1>Find your Brewery in Ireland</h1>
 
 <!--Filterfunktion für Brauereitypen-->
     <select id="brewery-type-dropdown">
@@ -21,10 +22,104 @@
       <option value="" disabled selected hidden>City</option>
     </select>
 
-    <!--Zaphahnanlage-->
     
-
+    
+<!--Zapfhahn-->
     <div class="tap">
+      <div class="tap-circle">
+        <svg xmlns="http://www.w3.org/2000/svg" width="83" height="83" viewBox="0 0 83 83" fill="none">
+          <circle cx="41.5" cy="41.5" r="41.5" fill="url(#paint0_radial_154_228)"/>
+          <defs>
+            <radialGradient id="paint0_radial_154_228" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(41.5 41.5) rotate(89.1575) scale(34.0037)">
+              <stop stop-color="#9D9D9D"/>
+              <stop offset="0.9999" stop-color="#5B5B5B"/>
+            </radialGradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="tap-center-button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42" fill="none">
+          <circle cx="21" cy="21" r="21" fill="url(#paint0_radial_154_239)"/>
+          <defs>
+            <radialGradient id="paint0_radial_154_239" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(21 21) rotate(90) scale(21)">
+              <stop stop-color="#CCCCCC"/>
+              <stop offset="1" stop-color="#797979"/>
+            </radialGradient>
+          </defs>
+        </svg>
+        <div class="tap-center-inner">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="12" fill="#AAAAAA"/>
+          </svg>
+        </div>
+        <div class="tap-connector-gold">
+          <svg xmlns="http://www.w3.org/2000/svg" width="29" height="18" viewBox="0 0 29 18" fill="none">
+            <path d="M0.888793 0.999945C1.38879 -0.500055 28.3887 -0.000135899 28.8888 0.999945C29.3889 2.00003 27.3888 4.8642 27.3888 9.49995C27.3888 14.1357 28.8888 17.9999 28.8888 17.9999H0.888793C0.888793 17.9999 2.36487 14.1357 2.38879 9.49995C2.41272 4.8642 0.388793 2.49995 0.888793 0.999945Z" fill="url(#paint0_linear_154_237)"/>
+            <defs>
+              <linearGradient id="paint0_linear_154_237" x1="14.8889" y1="1" x2="14.8889" y2="15" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#BD9043"/>
+                <stop offset="1" stop-color="#57421F"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <div class="tap-connector-gold-bottom">
+            <svg xmlns="http://www.w3.org/2000/svg" width="39" height="20" viewBox="0 0 39 20" fill="none">
+              <path d="M0.888889 2.00003C2.88889 0.499949 36.3889 0.500031 37.8889 2.00003C39.3889 3.50003 37.8889 20 37.8889 20C37.8889 20 32.5336 16 19.3889 16C6.24415 16 0.888889 20 0.888889 20C0.888889 20 -1.11111 3.50011 0.888889 2.00003Z" fill="url(#paint0_linear_154_238)"/>
+              <defs>
+                <linearGradient id="paint0_linear_154_238" x1="19.3889" y1="2" x2="19.8889" y2="20" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#BD9043"/>
+                  <stop offset="1" stop-color="#57421F"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          
+        </div>
+      
+        
+        
+      </div>
+      
+      <div class="tap-top-spout">
+        <svg xmlns="http://www.w3.org/2000/svg" width="39" height="26" viewBox="0 0 39 26" fill="none">
+          <path d="M10.5278 8.66667V0H19.2778H28.0278V8.66667C28.0278 8.66667 32.7777 8.66667 36.7778 8.66667C40.7778 8.66667 36.7778 26 36.7778 26H1.77778C1.77778 26 -2.22222 8.66667 1.77778 8.66667C5.77778 8.66667 10.5278 8.66667 10.5278 8.66667Z" fill="url(#paint0_linear_154_235)"/>
+          <defs>
+            <linearGradient id="paint0_linear_154_235" x1="-4" y1="1.4344e-07" x2="44.5" y2="-1.58992e-06" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#656565"/>
+              <stop offset="0.480769" stop-color="#CBCBCB"/>
+              <stop offset="1" stop-color="#656565"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      
+      <div class="tap-spout">
+        <svg xmlns="http://www.w3.org/2000/svg" width="42" height="62" viewBox="0 0 42 62" fill="none">
+          <path d="M0.999825 0H40.5C43.5912 0.440536 39.8008 18.5986 36.5074 26.5C33.214 34.4014 36.5074 62 36.5074 62C36.5074 62 33.5319 57.5 22.5311 57.5C11.5303 57.5 7.3876 62 7.3876 62C7.3876 62 10.8462 34.4765 7.3876 26.5C3.92902 18.5235 -1.46858 2.7143 0.999825 0Z" fill="url(#paint0_linear_154_230)"/>
+          <defs>
+            <linearGradient id="paint0_linear_154_230" x1="-4" y1="-1.5" x2="46.5" y2="-1.5" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#2E2E2E"/>
+              <stop offset="0.509615" stop-color="#C8C8C8"/>
+              <stop offset="1" stop-color="#2E2E2E"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <div class="tap-opening">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="17" viewBox="0 0 30 17" fill="none">
+            <ellipse cx="15" cy="8.5" rx="15" ry="8.5" fill="#8C8C8C"/>
+          </svg>
+        </div>
+
+        <div class="tap-hole">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="11" viewBox="0 0 20 11" fill="none">
+            <ellipse cx="10" cy="5.5" rx="10" ry="5.5" fill="#454545"/>
+          </svg>
+        </div>
+        
+        
+      </div>
+      
+      
       <div class="tap-head"></div>
       <div id="handle" class="tap-handle">
         <svg xmlns="http://www.w3.org/2000/svg" width="48" height="121" viewBox="0 0 48 121" fill="none">
@@ -130,31 +225,21 @@
       </div>
       
       </div>
-      
-       
-  
-      
+        
     </div>
 
    
 
 
 
-    <div style="width: 100%; height: 100%; background: linear-gradient(90deg, #042900 0%, #2C5F00 51%, #042900 100%); border-radius: 6px"></div>
+    
 
 
 
       
     <div id="container"></div>
 
-    <!--Overlay Ergebnis-->
-
-    <div id="overlay" class="overlay hidden">
-      <div class="overlay-content" id="overlay-content">
-        <!-- Die Brauerei-Infos kommen hier per JS -->
-      </div>
-    </div>
-
+   
 </main>
 <script src="script.js" type="module"></script>
 </body>
