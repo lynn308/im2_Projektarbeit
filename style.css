@@ -12,6 +12,14 @@ main {
   text-align: center;
 }
 
+h1 {
+color: #FFF;
+font-family: "FONTSPRING DEMO - Wausau";
+font-size: 96px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
 
 
 .tap {
@@ -100,3 +108,120 @@ main {
     border-radius: 5px;
     background: rgba(255, 255, 255, 0.05);
   }
+
+  body {
+    background-color: #2b5300;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .nozzle-container {
+    position: relative;
+    width: 83px;
+    height: 140px;
+  }
+  
+  /* Oberer Ring */
+  .nozzle-top-ring {
+    position: absolute;
+    top: 20.95px;
+    left: 0;
+    width: 83px;
+    height: 83px;
+    background: radial-gradient(ellipse 40.97% 40.97% at 50% 50%, #9D9D9D 0%, #5B5B5B 100%);
+    border-radius: 9999px;
+  }
+  
+  /* Hauptkörper */
+  .nozzle-body {
+    position: absolute;
+    top: 56.95px;
+    left: 21.37px;
+    width: 41.27px;
+    height: 62px;
+    background: linear-gradient(90deg, #2E2E2E 0%, #C8C8C8 51%, #2E2E2E 100%);
+  }
+  
+  /* Unterer Schatten */
+  .nozzle-bottom-shadow {
+    position: absolute;
+    top: 111.95px;
+    left: 28px;
+    width: 30px;
+    height: 17px;
+    background: #8C8C8C;
+    border-radius: 9999px;
+  }
+  
+  /* Düsenöffnung */
+  .nozzle-bottom-inner {
+    position: absolute;
+    top: 114.95px;
+    left: 33px;
+    width: 20px;
+    height: 11px;
+    background: #454545;
+    border-radius: 9999px;
+  }
+  
+  /* Metallkragen */
+  .nozzle-ring-inner {
+    position: absolute;
+    top: 22.95px;
+    left: 23px;
+    width: 38.56px;
+    height: 26px;
+    background: linear-gradient(90deg, #656565 0%, #CBCBCB 48%, #656565 100%);
+  }
+  
+  /* Goldring oben */
+  .nozzle-ring-top {
+    position: absolute;
+    top: 0px;
+    left: 28.81px;
+    width: 28.16px;
+    height: 17.95px;
+    background: linear-gradient(180deg, #BD9043 0%, #57421F 100%);
+  }
+  
+  /* Goldring unten */
+  .nozzle-ring-bottom {
+    position: absolute;
+    top: 10.82px;
+    left: 23px;
+    width: 38.56px;
+    height: 19.13px;
+    background: linear-gradient(179deg, #BD9043 0%, #57421F 100%);
+  }
+  
+  /* Vordere Scheibe */
+  .nozzle-disk {
+    position: absolute;
+    top: 38.95px;
+    left: 21px;
+    width: 42px;
+    height: 42px;
+    background: radial-gradient(ellipse 50% 50% at 50% 50%, #CCCCCC 0%, #797979 100%);
+    border-radius: 9999px;
+  }
+  
+  /* Scheibenmitte */
+  .nozzle-disk-center {
+    position: absolute;
+    top: 47.95px;
+    left: 30px;
+    width: 24px;
+    height: 24px;
+    background: #AAAAAA;
+    border-radius: 9999px;
+  }
+
+  .tap .nozzle-container {
+    position: absolute;
+    top: 50px; /* Passe diesen Wert je nach Position optisch an */
+    left: 58px; /* zentriert unter dem Tap */
+    z-index: 2;
+  }
+  
