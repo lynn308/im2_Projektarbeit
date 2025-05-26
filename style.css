@@ -62,14 +62,14 @@ line-height: normal;
   
   /* Hebel */
   .tap-handle {
-    width: 20px;
-    height: 60px;
-    background: green;
-    margin: 10px auto;
-    border-radius: 4px;
-    transform-origin: top center;
-    transition: transform 0.3s ease;
+    position: absolute;
+    top: -70px; /* Feintuning je nach Nozzle-Position */
+    left: 38%;
+    width: 48px;
+    height: 121px;
     cursor: pointer;
+    transition: transform 0.3s ease;
+    z-index: 10; 
   }
   
   /* Hauptkörper */
