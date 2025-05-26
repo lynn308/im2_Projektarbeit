@@ -10,9 +10,34 @@
 <body>
 <main>
 <h1>Find your Brewery in Ireland</h1>
+
+<!--Filterfunktion für Brauereitypen-->
     <select id="brewery-type-dropdown">
-      <option value="">Brewery Type</option>
+      <option value="" disabled selected hidden>Brewery Type</option>
     </select>
+
+    <!--Filterfunktion für Städte in Irland-->
+    <select id="city-dropdown">
+      <option value="" disabled selected hidden>City</option>
+    </select>
+
+    <!--Zaphahnanlage-->
+    
+
+    <div class="tap">
+      <div class="tap-head"></div>
+      <div id="handle" class="tap-handle"></div>
+      <div class="tap-body"></div>
+      <div class="tap-nozzle"></div>
+      <div id="beer-stream" class="beer-stream"></div>
+      <div id="glass" class="glass"></div>
+      <div class="tap-base"></div>
+       
+  
+      
+    </div>
+
+
 
     <div style="width: 100%; height: 100%; background: linear-gradient(90deg, #042900 0%, #2C5F00 51%, #042900 100%); border-radius: 6px"></div>
 
@@ -20,6 +45,14 @@
 
       
     <div id="container"></div>
+
+    <!--Overlay Ergebnis-->
+
+    <div id="overlay" class="overlay hidden">
+      <div class="overlay-content" id="overlay-content">
+        <!-- Die Brauerei-Infos kommen hier per JS -->
+      </div>
+    </div>
 
 </main>
 <script src="script.js" type="module"></script>

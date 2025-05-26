@@ -3,7 +3,7 @@ console.log('hi script.js')
 const container = document.querySelector("#container")
 const dropdown = document.querySelector("#brewery-type-dropdown")
 
-const API_URL = "https://api.openbrewerydb.org/v1/breweries";
+const API_URL = "https://api.openbrewerydb.org/v1/breweries?by_country=ireland&per_page=50";
 
 
 async function fetchData(url){
@@ -16,6 +16,8 @@ async function fetchData(url){
     }
 }
 
+//Filter für Brauereien nach Typ//
+
 const myData = await fetchData(API_URL);
 
 function populateDropdown() {
@@ -27,6 +29,21 @@ function populateDropdown() {
         dropdown.appendChild(option);
     });
 }
+
+//Filter für Brauereien nach Stadt//
+const cityDropdown = document.querySelector("#city-dropdown");
+
+function populateCityDropdown() {
+    const cities = [...new Set(myData.map(item => item.city).filter(Boolean))];
+    cities.sort(); // alphabetisch
+    cities.forEach(city => {
+        const option = document.createElement("option");
+        option.value = city;
+        option.textContent = city;
+        cityDropdown.appendChild(option);
+    });
+}
+
 
 // Funktion zur Anzeige der Brauereien
 function showData(filteredData) {
@@ -43,16 +60,84 @@ function showData(filteredData) {
     });
 }
 
-// Event-Listener für das Dropdown
-dropdown.addEventListener('change', (e) => {
-    const selectedType = e.target.value;
-    const filteredData = selectedType 
-        ? myData.filter(item => item.brewery_type === selectedType) 
-        : myData; // Wenn nichts ausgewählt ist, zeige alle Brauereien
-    showData(filteredData);
-});
 
 // Zuerst Dropdown befüllen und alle Daten anzeigen
 populateDropdown();
-showData(myData);
+populateCityDropdown();
 
+
+//Overlay für Ergebnisanzeige//
+function showOverlay(breweryData) {
+    const overlay = document.getElementById("overlay");
+    const content = document.getElementById("overlay-content");
+
+    content.innerHTML = `
+        <h2>Your Brewery Match 🍻</h2>
+        <p><strong>Name:</strong> ${breweryData.name}</p>
+        <p><strong>Type:</strong> ${breweryData.brewery_type}</p>
+        <p><strong>Location:</strong> ${breweryData.city}, ${breweryData.state}</p>
+        <p><strong>Address:</strong> ${breweryData.street}</p>
+        <p><strong>Website:</strong> 
+            <a href="${breweryData.website_url}" target="_blank">
+                ${breweryData.website_url}
+            </a>
+        </p>
+        <p><em>Klick irgendwo, um zu schließen</em></p>
+    `;
+
+    overlay.classList.remove("hidden");
+}
+
+//Overlay schliessen//
+document.getElementById("overlay").addEventListener("click", () => {
+    document.getElementById("overlay").classList.add("hidden");
+});
+
+//Bier auslösen bei klick auf Hebel
+
+const handle = document.getElementById("handle");
+const stream = document.getElementById("beer-stream");
+const glass = document.getElementById("glass");
+
+handle.addEventListener("click", () => {
+    // Griff optisch drehen
+    handle.style.transform = "rotate(45deg)";
+
+    // Bier "fließt"
+    stream.style.height = "80px";
+    glass.style.background = "gold";
+
+    // Nach 1,5 Sekunden: Griff zurück + Overlay zeigen
+    setTimeout(() => {
+        handle.style.transform = "rotate(0deg)";
+        stream.style.height = "0";
+
+        // Filter anwenden
+        const selectedType = dropdown.value;
+        const selectedCity = cityDropdown.value;
+
+        if (!selectedType && !selectedCity) {
+            alert("Bitte wähle zuerst einen Brauereityp oder eine Stadt.");
+            return; // Beende die Funktion
+          }
+          
+
+        const filteredData = myData.filter(item => {
+            const matchesType = selectedType
+  ? item.brewery_type?.toLowerCase() === selectedType.toLowerCase()
+  : true;
+
+const matchesCity = selectedCity
+  ? item.city?.toLowerCase() === selectedCity.toLowerCase()
+  : true;
+
+            return matchesType && matchesCity;
+        });
+
+        if (filteredData.length > 0) {
+            showOverlay(filteredData[0]); // erste passende Brauerei
+        } else {
+            alert("Keine passende Brauerei gefunden.");
+        }
+    }, 1500);
+});
