@@ -99,16 +99,11 @@ handle.addEventListener("click", () => {
     const selectedType = dropdown.value;
     const selectedCity = cityDropdown.value;
 
-    // Filtere die Daten basierend auf dem ausgewählten Typ und der Stadt
     const filteredData = myData.filter(item => {
         const typeMatch = selectedType === "all" || item.brewery_type === selectedType;
         const cityMatch = selectedCity === "all" || item.city === selectedCity;
         return typeMatch && cityMatch;
     });
 
-    // Zeige die gefilterten Daten an
-    console.log(filteredData); // Debugging-Ausgabe
     showData(filteredData);
 });
-
-
