@@ -50,6 +50,12 @@ function populateCityDropdown() {
 // Funktion zur Anzeige der Brauereien
 function showData(filteredData) {
     container.innerHTML = ''; // Löscht bestehende Einträge
+    container.style.display = 'block'; // 🟢 Overlay sichtbar machen
+
+    const closeButton = document.createElement("button");
+    closeButton.id = "close-overlay";
+    closeButton.textContent = "✖";
+    container.appendChild(closeButton);
 
     if (filteredData.length === 0) {
         const noDataMessage = document.createElement("p");
@@ -62,13 +68,25 @@ function showData(filteredData) {
         let card = document.createElement("article");
         card.classList.add("card");
         card.innerHTML = `
-            <h2 class="irgendwas">${element.name}</h2>
-            <p>${element.brewery_type}</p>
-            <p>${element.website_url}</p>
-        `;
+        <h1 class="overlay-title">Your Brewery!</h1>
+        <div class="info-row"><span class="label">Name:</span><span class="value">${element.name}</span></div>
+        <div class="info-row"><span class="label">Adress:</span><span class="value">${element.address_1 || ''}, ${element.city || ''}</span></div>
+        
+        <div class="info-row"><span class="label">Website:</span>
+          <span class="value">${element.website_url ? `<a href="${element.website_url}" target="_blank">${element.website_url}</a>` : '-'}</span>
+        </div>
+      `;
         container.appendChild(card);
     });
+
+    
 }
+
+document.body.addEventListener("click", (event) => {
+    if (event.target.id === "close-overlay") {
+      container.style.display = "none";
+    }
+});
 
 
 // Zuerst Dropdown befüllen und alle Daten anzeigen
@@ -92,3 +110,5 @@ handle.addEventListener("click", () => {
     console.log(filteredData); // Debugging-Ausgabe
     showData(filteredData);
 });
+
+
