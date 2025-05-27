@@ -1,16 +1,24 @@
 body {
-  background: linear-gradient(90deg, #042900 0%, #2C5F00 51%, #042900 100%);
+  background: url("img/Hintergrund.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: #fff;
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 20px;
 }
 
+
+
+
 main {
   max-width: 900px;
   margin: auto;
   text-align: center;
 }
+
+
 
 h1 {
 color: #FFF;
@@ -20,7 +28,8 @@ font-style: normal;
 font-weight: 400;
 line-height: normal;
 text-align: center;
-  margin-bottom: 20px;
+margin-bottom: 130px;
+margin-top:-20px;
 
 }
 
@@ -269,6 +278,9 @@ text-align: center;
   top: -100px; /* oder -80px je nach Bedarf */
   margin: 0 5px;
   z-index: 10;
+  margin-right: 60px;
+  margin-left: 60px;
+  background-color: #2C5F00;
 }
 
 
@@ -342,5 +354,41 @@ text-align: center;
 }
 
 
+.bar-container {
+  width: 1363px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* zentriert Kind-Elemente horizontal */
+  margin-top: -100px;
+}
+
+
+.bar-top {
+  width: 100%; /* volle Breite innerhalb der Containerbreite */
+  height: 142px;
+  background-color: #a07e4a;
+  border-radius: 78.5px;
+}
+
+
+.bar-front {
+  width: 90%; /* volle Breite innerhalb der Containerbreite */
+  height: 200px;
+  background-color: #8b683a;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+
+.bar-front .panel {
+  width: 300px;
+  height: 160px;
+  background-color: #704d26; /* noch dunkler – "Füllungen" oder "Paneele" */
+  border-radius: 8px;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
+}
 
 
