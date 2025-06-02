@@ -12,27 +12,44 @@
   <h1>Find your Brewery in Ireland</h1>
 <main>
 
-<!--Filterfunktion für Brauereitypen-->
+<div class="dropdown-wrapper">
+  <div class="dropdown-column">
     <select id="brewery-type-dropdown">
       <option value="" disabled selected hidden>Brewery Type</option>
     </select>
+    <div class="connection-svg">
+      <!-- LEFT SVG -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="98" height="117" viewBox="0 0 98 130" fill="none">
+        <path d="M90 117V69.5162H8V0" stroke="url(#paint0_linear_195_1319)" stroke-width="15"/>
+        <defs>
+          <linearGradient id="paint0_linear_195_1319" x1="49" y1="-7.15246e-09" x2="49.3424" y2="223.752" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#DBBE00"/>
+            <stop offset="1" stop-color="#7E6A47"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+  </div>
 
-    <!--Filterfunktion für Städte in Irland-->
+  <div class="dropdown-column">
     <select id="city-dropdown">
       <option value="" disabled selected hidden>City</option>
     </select>
-    
-  <div class="connection">
-    <svg xmlns="http://www.w3.org/2000/svg" width="82" height="117" viewBox="0 0 98 117" fill="none">
-      <path d="M90 117V69.5162H8V0" stroke="url(#paint0_linear)" stroke-width="15"/>
-      <defs>
-        <linearGradient id="paint0_linear" x1="49" y1="0" x2="49" y2="117" gradientUnits="userSpaceOnUse">
-          <stop stop-color="#DBBE00"/>
-          <stop offset="1" stop-color="#7E6A47"/>
-        </linearGradient>
-      </defs>
-    </svg>
+    <div class="connection-svg">
+      <!-- RIGHT SVG -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="98" height="117" viewBox="0 0 98 130" fill="none">
+        <path d="M8 117V69.5162H90V0" stroke="url(#paint0_linear_195_1320)" stroke-width="15"/>
+        <defs>
+          <linearGradient id="paint0_linear_195_1320" x1="49" y1="-3.57623e-09" x2="49.3424" y2="234.427" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#DBBE00"/>
+            <stop offset="1" stop-color="#7E6A47"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
   </div>
+</div>
+
 
 <!--Zapfhahn-->
     <div class="tap">

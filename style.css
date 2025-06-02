@@ -41,7 +41,8 @@ margin-top:-20px;
   border: none;
   border-radius: 10px;
   position: relative;
-  margin: auto;
+  margin:auto;
+  margin-top: -1px;
 }
 
 
@@ -284,7 +285,8 @@ margin-top:-20px;
 #city-dropdown {
   position: relative;
   top: -100px; /* oder -80px je nach Bedarf */
-  margin: 0 5px;
+  margin: 0;
+  top: -20px;
   z-index: 10;
   margin-right: 60px;
   margin-left: 60px;
@@ -309,14 +311,48 @@ margin-top:-20px;
   background-color: #c6ab2d; /* Gold-Ton wie in Figma */
   border: 9px solid white;   /* Weißer Rahmen */
   border-radius: 10px;
-  width: 975px;
-  height: 692px;
+  width: 1000px;
+  height: 500px;
   padding: 40px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
   z-index: 1000;
   overflow-y: auto;
 }
 
+.dropdown-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+}
+
+.dropdown-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 80px; /* Abstand zwischen den Dropdowns */
+  margin-top: 0px;
+  z-index: 10;
+  position: relative;
+}
+
+.dropdown-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: -77px;
+  margin-left: -77px;
+  margin-bottom: 5px;
+}
+
+.connection-svg {
+  margin-top: -10px; /* Feinjustierung SVG-Platzierung */
+  margin-block: -20px;
+
+}
+
+
+
+  
 
 .overlay-title {
   text-align: center;
