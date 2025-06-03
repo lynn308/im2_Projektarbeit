@@ -12,6 +12,7 @@
   <h1>Find your Brewery in Ireland</h1>
 <main>
 
+<div class="interface-group">
 <div class="dropdown-wrapper">
   <div class="dropdown-column">
     <select id="brewery-type-dropdown">
@@ -49,7 +50,6 @@
     </div>
   </div>
 </div>
-
 
 <!--Zapfhahn-->
     <div class="tap">
@@ -137,6 +137,8 @@
           </svg>
         </div>
 
+        <div id="beer-flow" class="beer-flow"></div>
+
         <div class="tap-hole">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="11" viewBox="0 0 20 11" fill="none">
             <ellipse cx="10" cy="5.5" rx="10" ry="5.5" fill="#454545"/>
@@ -171,23 +173,31 @@
         <div class="nozzle-disk-center"></div>
       </div>
       <div class="tap-base"></div>
-      <div class="beer-animation">
-        <div id="glass"><div id="beer"></div></div>
-        <div id="poignet"></div>
-        <div id="mousse_1"></div>
-        <div id="mousse_2"></div>
-        <div id="mousse_3"></div>
-        <div id="mousse_4"></div>
-        <div id="mousse_5"></div>
-        <div id="mousse_volante"></div>
-        <div id="mousse_interieur"></div>
-        <div id="mousse_interieur_2"></div>
-        <div id="mousse_interieur_3"></div>
-        <div id="mousse_interieur_4"></div>
-        
+  </div>
+  
+<!-- Bierglas unter dem Zapfhahn -->
+ <div class="beer-glass">
+      <div class="glass">
+        <div class="beer-fill"></div>
+      </div>
     </div>
+  </div>
+</div>
+  
 
-      
+  <div class="bar-container">
+    <div class="bar-top"></div>
+    <div class="bar-front">
+      <div class="panel"></div>
+      <div class="panel"></div>
+      <div class="panel"></div>
+    </div>
+  </div>
+
+
+
+
+ 
     
     <div id="container"></div>
 
@@ -196,14 +206,7 @@
 
    
 </main>
-<div class="bar-container">
-  <div class="bar-top"></div>
-  <div class="bar-front">
-  <div class="panel"></div>
-  <div class="panel"></div>
-  <div class="panel"></div>
-  </div>
-</div>
+
 
 
 

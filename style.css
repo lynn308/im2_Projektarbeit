@@ -1,23 +1,27 @@
-body {
-  background: url("img/Hintergrund_Holz\ -\ Findyourbrewery.jpeg.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: #fff;
-  font-family: Arial, sans-serif;
+html, body {
+  height: 100%;
   margin: 0;
-  padding: 20px;
+  padding: 0;
+  overflow: hidden; 
 }
 
-
+body {
+  background: url("img/Hintergrund_Holz - Findyourbrewery.jpeg.jpg");
+  background-size: cover;
+  background-position: center;
+  
+  color: #fff;
+  font-family: Arial, sans-serif;
+  
+}
 
 
 main {
-  max-width: 900px;
-  margin: auto;
-  text-align: center;
+ 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
 
 
 h1 {
@@ -29,7 +33,7 @@ font-weight: 400;
 line-height: normal;
 text-align: center;
 margin-bottom: 130px;
-margin-top:-20px;
+margin-top:20px;
 
 }
 
@@ -42,9 +46,9 @@ margin-top:-20px;
   border-radius: 10px;
   position: relative;
   margin:auto;
-  margin-top: -1px;
+  z-index: 10;
+  margin-top: -5px; /* Abstand zum oberen Rand */
 }
-
 
 
 
@@ -60,11 +64,6 @@ margin-top:-20px;
   margin: auto;
   z-index: 1;
 }
-
-
-
-  
-
   
   /* Hebel */
   .tap-handle {
@@ -77,111 +76,7 @@ margin-top:-20px;
     transition: transform 0.3s ease;
     z-index: 10; 
   }
-  
- 
-  
-  
- 
-  
-  /* Bierglas */
-  .glass {
-    position: absolute;
-    bottom: -100px; /* unter dem Zapfhahn */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 224px;
-    height: 290px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    z-index: 2;
-  }
-  
-  .glass-outer {
-    position: absolute;
-    bottom: 0px; /* <- das ist ein guter Startwert */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 155px;
-    height: 271px;
-    z-index: 2;
     
-  }
-  
-  
-  .glass-bottom {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 155px;
-    height: 29px;
-    z-index: 3;
-  }
-  
-  .glass-detail {
-    position: absolute;
-    z-index: 4;
-  }
-  
-  .glass-detail-1 {
-    top: 45px;     
-    left: 20px;    
-    width: 22px;
-    height: 171px;
-  }
-
-  .glass-detail-2 {
-    position: absolute;
-    top: 55px; 
-    left: 50%; 
-    transform: translateX(-50%); 
-    width: 22px;
-    height: 169px;
-    z-index: 4;
-  }
-  
-  .glass-detail-3 {
-    position: absolute;
-    top: 45px;         
-    right: 16px;       
-    width: 22px;
-    height: 171px;
-    z-index: 4;
-  }
-  
-  .glass-top {
-    position: absolute;
-    top: -30px; 
-    left: 50%;
-    transform: translateX(-50%);
-    width: 160px;
-    height: 68px;
-    z-index: 5;
-  }
-  
-  .glass-mouth {
-    position: absolute;
-    top: -27px; 
-    left: 50%;
-    transform: translateX(-50%);
-    width: 155px;
-    height: 29px;
-    z-index: 6;
-  }
-  
-  .glass-handle {
-    position: absolute;
-    top: 320px;     
-    right: -40px;    
-    width: 88px;
-    height: 174px;
-    z-index: 1;    
-  }
-  
-  
-
-  
   .tap-circle {
     position: absolute;
     top: 70px; /* Passe diesen Wert ggf. an, je nach Position */
@@ -281,24 +176,31 @@ margin-top:-20px;
 }
   
   /*Dropdown Menu*/
-  #brewery-type-dropdown,
+#brewery-type-dropdown,
 #city-dropdown {
   position: relative;
-  top: -100px; /* oder -80px je nach Bedarf */
   margin: 0;
   top: -20px;
   z-index: 10;
   margin-right: 60px;
   margin-left: 60px;
   background-color: #2C5F00;
-  color: white;                  /* Schriftfarbe */
-  border: 2px solid white;       /* Weißer Rand */
-  padding: 12px 24px 12px 16px;            /* Innenabstand für mehr Größe */
-  font-size: 18px;               /* Größere Schrift */
-  border-radius: 6px;            /* Optional: abgerundete Ecken */
-  z-index: 10;
-  width: 200px; /* Breite des Dropdowns */
-  box-sizing: border-box; /* Damit Padding und Border in der Breite enthalten sind */
+  color: white;
+  border: 2px solid white;
+  padding: 12px 40px 12px 16px; /* ⬅️ rechts mehr Platz für eigenen Pfeil */
+  font-size: 18px;
+  border-radius: 6px;
+  width: 200px;
+  box-sizing: border-box;
+
+  /* Pfeil-Ersatz */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='14' viewBox='0 0 20 20' width='16' xmlns='http://www.w3.org/2000/svg'><polygon points='0,0 20,0 10,10'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 16px center; /* ⬅️ Abstand zum Rand */
+  background-size: 10px;
 }
 
 
@@ -326,6 +228,7 @@ margin-top:-20px;
   gap: 0;
 }
 
+
 .dropdown-wrapper {
   display: flex;
   justify-content: center;
@@ -349,6 +252,8 @@ margin-top:-20px;
   margin-block: -20px;
 
 }
+
+
 
 
 
@@ -407,13 +312,16 @@ margin-top:-20px;
 
 
 .bar-container {
-  width: 1363px;
-  margin-left: auto;
-  margin-right: auto;
+  position: relative;
+  margin-top: -325px;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center; /* zentriert Kind-Elemente horizontal */
-  margin-top: -100px;
+  align-items: center;
+  z-index: 2;
+  max-width: 1400px; /* maximale Breite des Containers */
+ 
+
 }
 
 
@@ -444,406 +352,66 @@ margin-top:-20px;
 }
 
 
-.beer-animation {
-  position: absolute;
-  bottom: 0px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
-}
 
-/* Glas */
-#glass {
-  width: 140px;
+/*Bierglas*/
+
+.beer-glass {
+  position: absolute;
+  top: 500px; /* Passe an, bis es genau unter dem Zapfhahn sitzt */
+  left: 49%;
+  transform: translateX(-50%);
+  width: 120px;
   height: 180px;
-  background: transparent;
-  border: 3.5px solid white;
-  border-top: none;
-  border-radius: 0 0 10px 10px;
+  z-index: 10;
+  pointer-events: none;
+}
+.glass {
+  width: 100%;
+  height: 100%;
+  border: 4px solid white;
+  border-radius: 0 0 20px 20px;
+  background-color: transparent;
   overflow: hidden;
   position: relative;
 }
 
-/* Henkel */
-#poignet {
-  width: 30px;
-  height: 55px;
-  background: transparent;
-  border: 3.5px solid white;
-  border-left: none;
-  border-radius: 0 16px 16px 0;
+.beer-fill {
   position: absolute;
-  left: 68px;
-  top: 4px;
-
-}
-
-/* Bierfüllung */
-#beer {
-  width: 116px;
-  height: 84px;
-  position: absolute;
-  left: 6px;
   bottom: 0;
-  overflow: hidden;
-}
-#beer::before {
-  content: "";
-  width: 250px;
-  height: 250px;
-  background: #E8B504;
-  position: absolute;
-  bottom: -180px;
-  left: -190px;
-  transform: rotate(40deg);
-  animation: beerFill 10s infinite;
+  width: 100%;
+  height: 0;
+  background-color: #E8B504;
+  transition: height 0.3s ease-out;
 }
 
-/* Schaumbälle außen */
-[id^="mousse_"] {
-  position: absolute;
-  z-index: 11;
-}
-#mousse_1,
-#mousse_2,
-#mousse_3,
-#mousse_4,
-#mousse_5 {
-  top: -8px;
-  left: 0;
-}
-#mousse_1::before,
-#mousse_1::after,
-#mousse_2::before,
-#mousse_2::after,
-#mousse_3::before,
-#mousse_3::after,
-#mousse_4::before,
-#mousse_4::after,
-#mousse_5::before {
-  content: "";
-  position: absolute;
-  background: white;
-  border-radius: 50%;
-  animation: moussePop 10s infinite;
-}
-#mousse_1 { left: 5px; }
-#mousse_2 { left: 20px; }
-#mousse_3 { left: 35px; }
-#mousse_4 { left: 50px; }
-#mousse_5 { left: 65px; }
-#mousse_1::before { width: 20px; height: 20px; top: 0; left: 0; }
-#mousse_1::after  { width: 17px; height: 17px; top: 5px; left: 10px; }
-#mousse_2::before { width: 20px; height: 20px; top: 0; left: 0; }
-#mousse_2::after  { width: 17px; height: 17px; top: -5px; left: 10px; }
-#mousse_3::before { width: 20px; height: 20px; top: 0; left: 0; }
-#mousse_3::after  { width: 17px; height: 17px; top: 10px; left: 15px; }
-#mousse_4::before { width: 20px; height: 20px; top: 0; left: 0; }
-#mousse_4::after  { width: 17px; height: 17px; top: 5px; left: 10px; }
-#mousse_5::before { width: 20px; height: 20px; top: 0; left: 0; }
-
-/* Fliegender Schaum */
-#mousse_volante {
-  top: -12px;
-  left: 20px;
-}
-#mousse_volante::before,
-#mousse_volante::after {
-  content: "";
-  position: absolute;
-  background: white;
-  border-radius: 50%;
-  animation: mousseFly 10s infinite;
-}
-#mousse_volante::before {
-  width: 12px;
-  height: 12px;
-  top: 0;
-  left: 0;
-}
-#mousse_volante::after {
-  width: 8px;
-  height: 8px;
-  top: 15px;
-  left: 40px;
-}
-
-/* Innen-Schaum */
-[id^="mousse_interieur"] {
-  opacity: 0.9;
-}
-#mousse_interieur,
-#mousse_interieur_2,
-#mousse_interieur_3,
-#mousse_interieur_4 {
-  top: 40px;
-  left: 20px;
-}
-#mousse_interieur::before,
-#mousse_interieur::after,
-#mousse_interieur_2::before,
-#mousse_interieur_2::after,
-#mousse_interieur_3::before,
-#mousse_interieur_3::after,
-#mousse_interieur_4::before,
-#mousse_interieur_4::after {
-  content: "";
-  position: absolute;
-  background: white;
-  border-radius: 50%;
-  animation: mousseInterior 10s infinite;
-}
-#mousse_interieur::before { width: 6px; height: 6px; top: 0; left: 0; }
-#mousse_interieur::after  { width: 4px; height: 4px; top: 15px; left: 30px; }
-#mousse_interieur_2::before { width: 7px; height: 7px; }
-#mousse_interieur_2::after  { width: 3px; height: 3px; top: 5px; left: 17px; }
-#mousse_interieur_3::before { width: 9px; height: 9px; }
-#mousse_interieur_3::after  { width: 5px; height: 5px; top: 8px; left: 12px; }
-#mousse_interieur_4::before { width: 2px; height: 2px; }
-#mousse_interieur_4::after  { width: 5.5px; height: 5.5px; top: 28px; left: 2px; }
-
-@keyframes beerFill {
-  0% { transform: translateY(100px); }
-  20% { transform: translateY(0); }
-  100% { transform: translateY(0); }
-}
-
-
-
-@keyframes moussePop {
-  0%, 10% { transform: scale(0); }
-  20% { transform: scale(1); }
-  100% { transform: scale(1); }
-}
-
-@keyframes mousseFly {
-  0%, 10% {
-    transform: scale(0) translateY(0px);
-    opacity: 1;
+@keyframes fillBeer {
+  from {
+    height: 0;
   }
-  20% {
-    transform: scale(1) translateY(-20px);
-    opacity: 1;
-  }
-  40%, 100% {
-    transform: scale(1) translateY(-80px);
-    opacity: 0;
+  to {
+    height: 100%;
   }
 }
 
-@keyframes mousseInterior {
-  0%, 20% {
-    transform: scale(0) translateY(0px);
-    opacity: 1;
-  }
-  40% {
-    transform: scale(1) translateY(-60px);
-    opacity: 1;
-  }
-  50%, 100% {
-    transform: scale(1) translateY(-60px);
-    opacity: 0;
-  }
-}
-
-.beer-animation {
-  position: absolute;
-  bottom: 0px;
-  left: 50%;
-  transform: translateX(-50%);
+.interface-group {
+  position: relative;
+  top: -90px; /* 👈 Das verschiebt ALLES nach oben – passe an wie nötig */
+  transform: scale(0.8);   /* 👈 skaliert alles auf 80% */
+  transform-origin: top center; /* Skalierung vom oberen Mittelpunkt aus */
+  z-index: 10;
   z-index: 10;
 }
 
-/* Glas */
-#glass {
-  width: 140px;
-  height: 180px;
-  background: transparent;
-  border: 3.5px solid white;
-  border-top: none;
-  border-radius: 0 0 10px 10px;
-  overflow: hidden;
-  position: relative;
-}
 
-/* Henkel */
-#poignet {
-  width: 30px;
-  height: 55px;
-  background: transparent;
-  border: 3.5px solid white;
-  border-left: none;
-  border-radius: 0 16px 16px 0;
+.beer-flow {
   position: absolute;
-  left: 68px;
-  top: 4px;
-
-}
-
-/* Bierfüllung */
-#beer {
-  width: 116px;
-  height: 84px;
-  position: absolute;
-  left: 6px;
-  bottom: 0;
-  overflow: hidden;
-}
-#beer::before {
-  content: "";
-  width: 250px;
-  height: 250px;
-  background: #E8B504;
-  position: absolute;
-  bottom: -180px;
-  left: -190px;
-  transform: rotate(40deg);
-  animation: beerFill 10s infinite;
-}
-
-/* Schaumbälle außen */
-[id^="mousse_"] {
-  position: absolute;
-  z-index: 11;
-}
-#mousse_1,
-#mousse_2,
-#mousse_3,
-#mousse_4,
-#mousse_5 {
-  top: -8px;
-  left: 0;
-}
-#mousse_1::before,
-#mousse_1::after,
-#mousse_2::before,
-#mousse_2::after,
-#mousse_3::before,
-#mousse_3::after,
-#mousse_4::before,
-#mousse_4::after,
-#mousse_5::before {
-  content: "";
-  position: absolute;
-  background: white;
-  border-radius: 50%;
-  animation: moussePop 10s infinite;
-}
-#mousse_1 { left: 5px; }
-#mousse_2 { left: 20px; }
-#mousse_3 { left: 35px; }
-#mousse_4 { left: 50px; }
-#mousse_5 { left: 65px; }
-#mousse_1::before { width: 20px; height: 20px; top: 0; left: 0; }
-#mousse_1::after  { width: 17px; height: 17px; top: 5px; left: 10px; }
-#mousse_2::before { width: 20px; height: 20px; top: 0; left: 0; }
-#mousse_2::after  { width: 17px; height: 17px; top: -5px; left: 10px; }
-#mousse_3::before { width: 20px; height: 20px; top: 0; left: 0; }
-#mousse_3::after  { width: 17px; height: 17px; top: 10px; left: 15px; }
-#mousse_4::before { width: 20px; height: 20px; top: 0; left: 0; }
-#mousse_4::after  { width: 17px; height: 17px; top: 5px; left: 10px; }
-#mousse_5::before { width: 20px; height: 20px; top: 0; left: 0; }
-
-/* Fliegender Schaum */
-#mousse_volante {
-  top: -12px;
-  left: 20px;
-}
-#mousse_volante::before,
-#mousse_volante::after {
-  content: "";
-  position: absolute;
-  background: white;
-  border-radius: 50%;
-  animation: mousseFly 10s infinite;
-}
-#mousse_volante::before {
+  top: 60px; /* ⬅️ Ausgangspunkt = Position unter Ellipse */
+  left: 50%;
+  transform: translateX(-50%);
   width: 12px;
-  height: 12px;
-  top: 0;
-  left: 0;
-}
-#mousse_volante::after {
-  width: 8px;
-  height: 8px;
-  top: 15px;
-  left: 40px;
-}
-
-/* Innen-Schaum */
-[id^="mousse_interieur"] {
-  opacity: 0.9;
-}
-#mousse_interieur,
-#mousse_interieur_2,
-#mousse_interieur_3,
-#mousse_interieur_4 {
-  top: 40px;
-  left: 20px;
-}
-#mousse_interieur::before,
-#mousse_interieur::after,
-#mousse_interieur_2::before,
-#mousse_interieur_2::after,
-#mousse_interieur_3::before,
-#mousse_interieur_3::after,
-#mousse_interieur_4::before,
-#mousse_interieur_4::after {
-  content: "";
-  position: absolute;
-  background: white;
-  border-radius: 50%;
-  animation: mousseInterior 10s infinite;
-}
-#mousse_interieur::before { width: 6px; height: 6px; top: 0; left: 0; }
-#mousse_interieur::after  { width: 4px; height: 4px; top: 15px; left: 30px; }
-#mousse_interieur_2::before { width: 7px; height: 7px; }
-#mousse_interieur_2::after  { width: 3px; height: 3px; top: 5px; left: 17px; }
-#mousse_interieur_3::before { width: 9px; height: 9px; }
-#mousse_interieur_3::after  { width: 5px; height: 5px; top: 8px; left: 12px; }
-#mousse_interieur_4::before { width: 2px; height: 2px; }
-#mousse_interieur_4::after  { width: 5.5px; height: 5.5px; top: 28px; left: 2px; }
-
-@keyframes beerFill {
-  0% { transform: translateY(100px); }
-  20% { transform: translateY(0); }
-  100% { transform: translateY(0); }
-}
-
-
-
-@keyframes moussePop {
-  0%, 10% { transform: scale(0); }
-  20% { transform: scale(1); }
-  100% { transform: scale(1); }
-}
-
-@keyframes mousseFly {
-  0%, 10% {
-    transform: scale(0) translateY(0px);
-    opacity: 1;
-  }
-  20% {
-    transform: scale(1) translateY(-20px);
-    opacity: 1;
-  }
-  40%, 100% {
-    transform: scale(1) translateY(-80px);
-    opacity: 0;
-  }
-}
-
-@keyframes mousseInterior {
-  0%, 20% {
-    transform: scale(0) translateY(0px);
-    opacity: 1;
-  }
-  40% {
-    transform: scale(1) translateY(-60px);
-    opacity: 1;
-  }
-  50%, 100% {
-    transform: scale(1) translateY(-60px);
-    opacity: 0;
-  }
+  height: 0px; /* Startzustand */
+  background-color: #E8B504;
+  border-radius: 4px;
+  z-index: 9;
+ transition: height 1s ease-in;
 }
