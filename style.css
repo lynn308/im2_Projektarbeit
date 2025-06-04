@@ -1,56 +1,51 @@
+/* ======= BASIS ======= */
 html, body {
+    background-image: url("img/Hintergrund_Holz - Findyourbrewery.jpeg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  background-attachment: fixed;
+  background-color: #3e2a1c;
   height: 100%;
   margin: 0;
   padding: 0;
-   
+  background-color: black;
 }
 
 body {
-  background: url("img/Hintergrund_Holz - Findyourbrewery.jpeg.jpg");
-  background-size: cover;
-  background-position: center;
-  
+  background: url("img/Hintergrund_Holz - Findyourbrewery.jpeg.jpg") no-repeat center center/cover;
   color: #fff;
   font-family: Arial, sans-serif;
-  
+  min-height: 100vh;
+  background-attachment: fixed;
+  overflow: hidden;
 }
 
-
 main {
- 
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-
 h1 {
-color: #FFF;
-font-family: "FONTSPRING DEMO - Wausau";
-font-size: 96px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-text-align: center;
-margin-bottom: 130px;
-margin-top:20px;
-
+  color: #FFF;
+  font-family: "FONTSPRING DEMO - Wausau";
+  font-size: clamp(36px, 8vw, 96px);
+  font-weight: 400;
+  text-align: center;
+  margin: 5vh 0 5vh;
 }
 
-
+/* ======= TAP / ZAPFHAHN ======= */
 .tap {
   width: 200px;
   height: 558.5px;
   background: linear-gradient(270deg, #3C3C3C -21.25%, #BCBCBC 50.99%, #3C3C3C 118.75%);
-  border: none;
   border-radius: 10px;
   position: relative;
-  margin:auto;
-  z-index: 10;
-  margin-top: -5px; /* Abstand zum oberen Rand */
+  z-index: 20;
+  margin: 0 auto 0 auto;
 }
-
-
 
 .tap-base {
   width: 200px;
@@ -64,307 +59,48 @@ margin-top:20px;
   margin: auto;
   z-index: 1;
 }
-  
-  /* Hebel */
-  .tap-handle {
-    position: absolute;
-    top: -70px; /* Feintuning je nach Nozzle-Position */
-    left: 38%;
-    width: 48px;
-    height: 121px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    z-index: 10; 
-  }
-    
-  .tap-circle {
-    position: absolute;
-    top: 70px; /* Passe diesen Wert ggf. an, je nach Position */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 83px;
-    height: 83px;
-    z-index: 2; /* damit es über dem Gehäuse liegt, aber unter anderen Zapfhahn-Teilen */
-  }
-  
-  .tap-spout {
-    position: absolute;
-    top: 110px; /* unterhalb des Kreises, ggf. anpassen */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 42px;
-    height: 62px;
-    z-index: 3;
-  }
-  
-  .tap-opening {
-    position: absolute;
-    top: 54px; /* leicht unter dem Ausfluss platzieren – ggf. anpassen */
-    left: 53%;
-    transform: translateX(-50%);
-    width: 30px;
-    height: 17px;
-    z-index: 2;
-  }
 
-  .tap-hole {
-    position: absolute;
-    top: 53px; /* minimal höher als die äußere Ellipse */
-    left: 53%;
-    transform: translateX(-50%);
-    width: 20px;
-    height: 11px;
-    z-index: 3; /* über der grauen Öffnung */
-  }
-  
-  .tap-top-spout {
-    position: absolute;
-    top: 75px; /* leicht unterhalb des Kreises */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 39px;
-    height: 26px;
-    z-index: 3;
-  }
-  
-  .tap-center-button {
-    position: absolute;
-    top: 90px; /* auf Höhe des "tap-top-spout" – ggf. feinjustieren */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 42px;
-    height: 42px;
-    z-index: 4;
-  }
-  
-  .tap-center-inner {
-    position: absolute;
-    top: 9px; 
-    left: 50%;
-    transform: translateX(-50%);
-    width: 24px;
-    height: 24px;
-    z-index: 5;
-  }
-  
-  .tap-connector-gold {
-    position: absolute;
-    top: -40px; /* etwa mittig auf dem großen Kreis */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 29px;
-    height: 18px;
-    z-index: 6; /* über dem kleinen Kreis, unter dem Griff */
-  }
-  
-  .tap-connector-gold-bottom {
-    position: absolute;
-    top: 10px; /* direkt unterhalb des vorherigen goldenen Elements */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 39px;
-    height: 20px;
-    z-index: 6; /* auf gleicher Ebene wie der obere goldene Teil */
-  }
-
-  .container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 100px;
-}
-  
-  /*Dropdown Menu*/
-#brewery-type-dropdown,
-#city-dropdown {
-  position: relative;
-  margin: 0;
-  top: -20px;
-  z-index: 10;
-  margin-right: 60px;
-  margin-left: 60px;
-  background-color: #2C5F00;
-  color: white;
-  border: 2px solid white;
-  padding: 12px 40px 12px 16px; /* ⬅️ rechts mehr Platz für eigenen Pfeil */
-  font-size: 18px;
-  border-radius: 6px;
-  width: 200px;
-  box-sizing: border-box;
-
-  /* Pfeil-Ersatz */
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='14' viewBox='0 0 20 20' width='16' xmlns='http://www.w3.org/2000/svg'><polygon points='0,0 20,0 10,10'/></svg>");
-  background-repeat: no-repeat;
-  background-position: right 16px center; /* ⬅️ Abstand zum Rand */
-  background-size: 10px;
-}
-
-
-#container {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #c6ab2d; /* Gold-Ton wie in Figma */
-  border: 9px solid white;   /* Weißer Rahmen */
-  border-radius: 10px;
-  width: 1000px;
-  height: 500px;
-  padding: 40px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-  z-index: 1000;
-  overflow-y: auto;
-}
-
-.dropdown-container {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 0;
-}
-
-
-.dropdown-wrapper {
-  display: flex;
-  justify-content: center;
-  gap: 80px; /* Abstand zwischen den Dropdowns */
-  margin-top: 0px;
-  z-index: 10;
-  position: relative;
-}
-
-.dropdown-column {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-right: -77px;
-  margin-left: -77px;
-  margin-bottom: 5px;
-}
-
-.connection-svg {
-  margin-top: -10px; /* Feinjustierung SVG-Platzierung */
-  margin-block: -20px;
-
-}
-
-
-
-
-
-  
-
-.overlay-title {
-  text-align: center;
-  font-family: 'Berkshire Swash';
-  font-size: 80px;
-  color: white;
-  margin-bottom: 40px;
-  margin-left: 180px;
-  text-align: left;
-}
-
-
-.info-row {
-  display: flex;
-  gap: 20px;
-  margin-bottom: 100px;
-  margin-left: 180px;
- 
-
-}
-
-.label {
-  font-weight: bold;
-  color: white;
-  font-size: 20px;
-  min-width: 120px; 
-  flex-shrink: 0;   
-  text-align: left; 
-}
-.value {
-  color: white;
-  font-size: 20px;
-  max-width: 700px;
-}
-
-.value a {
-  color: white;
-  text-decoration: underline;
-}
-
-
-#close-overlay {
+.tap-handle {
   position: absolute;
-  top: 15px;
-  right: 20px;
-  background: transparent;
-  color: white;
-  font-size: 24px;
-  border: none;
+  top: -70px;
+  left: 38%;
+  width: 48px;
+  height: 121px;
   cursor: pointer;
+  transition: transform 0.3s ease;
+  z-index: 10;
 }
 
-
-.bar-container {
-  position: relative;
-  margin-top: -325px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 2;
-  max-width: 1400px; /* maximale Breite des Containers */
- 
-
+.tap-circle, .tap-spout, .tap-opening, .tap-hole,
+.tap-top-spout, .tap-center-button, .tap-center-inner,
+.tap-connector-gold, .tap-connector-gold-bottom {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
+.tap-circle { top: 70px; width: 83px; height: 83px; z-index: 2; }
+.tap-spout { top: 110px; width: 42px; height: 62px; z-index: 3; }
+.tap-opening { top: 54px; width: 30px; height: 17px; z-index: 2; }
+.tap-hole { top: 53px; width: 20px; height: 11px; z-index: 3; }
+.tap-top-spout { top: 75px; width: 39px; height: 26px; z-index: 3; }
+.tap-center-button { top: 90px; width: 42px; height: 42px; z-index: 4; }
+.tap-center-inner { top: 9px; width: 24px; height: 24px; z-index: 5; }
+.tap-connector-gold { top: -40px; width: 29px; height: 18px; z-index: 6; }
+.tap-connector-gold-bottom { top: 10px; width: 39px; height: 20px; z-index: 6; }
 
-.bar-top {
-  width: 100%; /* volle Breite innerhalb der Containerbreite */
-  height: 142px;
-  background-color: #a07e4a;
-  border-radius: 78.5px;
-}
-
-
-.bar-front {
-  width: 90%; /* volle Breite innerhalb der Containerbreite */
-  height: 200px;
-  background-color: #8b683a;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-
-.bar-front.panel {
-  width: 300px;
-  height: 160px;
-  background-color: #704d26; /* noch dunkler – "Füllungen" oder "Paneele" */
-  border-radius: 8px;
-  box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
-}
-
-
-
-/*Bierglas*/
-
+/* ======= BEER ======= */
 .beer-glass {
   position: absolute;
-  top: 500px; /* Passe an, bis es genau unter dem Zapfhahn sitzt */
-  left: 49%;
+  top: 515px;
+  left: 50%;
   transform: translateX(-50%);
   width: 120px;
   height: 180px;
-  z-index: 10;
+  z-index: 30;
   pointer-events: none;
 }
+
 .glass {
   width: 100%;
   height: 100%;
@@ -382,36 +118,256 @@ margin-top:20px;
   height: 0;
   background-color: #E8B504;
   transition: height 0.3s ease-out;
+  z-index: 31;
 }
 
 @keyframes fillBeer {
-  from {
-    height: 0;
-  }
-  to {
-    height: 100%;
-  }
+  from { height: 0; }
+  to { height: 100%; }
 }
-
-.interface-group {
-  position: relative;
-  top: -90px; /* 👈 Das verschiebt ALLES nach oben – passe an wie nötig */
-  transform: scale(0.8);   /* 👈 skaliert alles auf 80% */
-  transform-origin: top center; /* Skalierung vom oberen Mittelpunkt aus */
-  z-index: 10;
-  z-index: 10;
-}
-
 
 .beer-flow {
   position: absolute;
-  top: 60px; /* ⬅️ Ausgangspunkt = Position unter Ellipse */
+  top: 60px;
   left: 50%;
   transform: translateX(-50%);
   width: 12px;
-  height: 0px; /* Startzustand */
+  height: 0;
   background-color: #E8B504;
   border-radius: 4px;
-  z-index: 9;
- transition: height 1s ease-in;
+  z-index: 29;
+  transition: height 1s ease-in;
+}
+
+/* ======= DROPDOWN & INTERFACE ======= */
+.interface-group {
+  position: relative;
+  top: -65px;
+  transform: scale(0.8);
+  transform-origin: top center;
+  z-index: 10;
+  margin-top: 60px;
+}
+
+#brewery-type-dropdown,
+#city-dropdown {
+  background-color: #2C5F00;
+  color: white;
+  border: 2px solid white;
+  padding: 12px 40px 12px 16px;
+  font-size: 18px;
+  border-radius: 6px;
+  width: 200px;
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='14' viewBox='0 0 20 20' width='16' xmlns='http://www.w3.org/2000/svg'><polygon points='0,0 20,0 10,10'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 10px;
+  z-index: 2;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.dropdown-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 5;
+}
+
+.dropdown-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+}
+
+.connection-svg {
+  margin-top: -10px;
+  margin-block: -20px;
+  z-index: 1;
+  position: relative;
+}
+
+.dropdown-column:first-child .connection-svg {
+  transform: translateX(30px);
+}
+
+.dropdown-column:last-child .connection-svg {
+  transform: translateX(-30px);
+}
+
+/* ======= OVERLAY ======= */
+#container {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #c6ab2d;
+  border: 9px solid white;
+  border-radius: 10px;
+  width: 90vw;
+  max-width: 1000px;
+  height: auto;
+  padding: 40px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.overlay-title {
+  text-align: left;
+  font-family: 'Berkshire Swash';
+  font-size: clamp(32px, 6vw, 80px);
+  color: white;
+  margin-bottom: 40px;
+}
+
+.info-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.label {
+  font-weight: bold;
+  color: white;
+  font-size: 20px;
+  min-width: 120px;
+  flex-shrink: 0;
+  text-align: left;
+}
+
+.value {
+  color: white;
+  font-size: 20px;
+  max-width: 700px;
+}
+
+.value a {
+  color: white;
+  text-decoration: underline;
+}
+
+#close-overlay {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: transparent;
+  color: white;
+  font-size: 24px;
+  border: none;
+  cursor: pointer;
+}
+
+/* ======= BAR ======= */
+.bar-container {
+  position: relative;
+  margin-top: 0;
+  padding-top: 40px;
+  width: 100%;
+  max-width: 1400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+  top: -290px;
+}
+
+.bar-top {
+  width: 100%;
+  height: 100px;
+  background-color: #a07e4a;
+  border-radius: 78.5px;
+}
+
+.bar-front {
+  width: 90%;
+  height: 200px;
+  background-color: #8b683a;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.bar-front .panel {
+  width: 300px;
+  height: 160px;
+  background-color: #704d26;
+  border-radius: 8px;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
+}
+
+/* ======= RESPONSIVE ======= */
+@media (max-width: 768px) {
+  .dropdown-wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .connection-svg {
+    display: none;
+  }
+
+  #brewery-type-dropdown,
+  #city-dropdown {
+    width: 80%;
+    font-size: 16px;
+  }
+
+  .interface-group {
+    transform: scale(0.6);
+    top: 0;
+    margin-top: 20px;
+  }
+
+  .tap {
+    transform: scale(0.85);
+    margin-top: 60px;
+  }
+
+  .beer-glass {
+    transform: scale(0.85) translateX(-50%);
+    top: 550px;
+    left: 90px;
+  }
+
+  h1 {
+    margin-bottom: 4vh;
+  }
+
+ @media (max-width: 768px) {
+  .bar-container {
+    transform: scale(1.2); /* Bar wird einfach vergrößert statt gequetscht */
+    transform-origin: top center;
+    width: 1400px;
+    overflow-x: hidden;
+    top: -420px; /* Bar wird höher positioniert */
+  }
+}
+
+
+  .overlay-title {
+    text-align: center;
+  }
+
+  .info-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .label,
+  .value {
+    font-size: 16px;
+    text-align: left;
+  }
+
+  #container {
+    padding: 20px;
+  }
 }
