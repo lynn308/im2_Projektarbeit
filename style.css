@@ -370,3 +370,11 @@ h1 {
     padding: 20px;
   }
 }
+@media (max-width: 1024px) {
+  html, body {
+    height: auto;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+}
