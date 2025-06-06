@@ -300,6 +300,8 @@ h1 {
   height: 100px;
   background-color: #a07e4a;
   border-radius: 78.5px;
+  z-index: 2;
+  position: relative;
 }
 
 .bar-front {
@@ -309,6 +311,9 @@ h1 {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  z-index: 1;
+  position: relative;
+  
 }
 
 .bar-front .panel {
@@ -467,19 +472,25 @@ h1 {
 
   }
 
-  
+  .tap-handle {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
   
   .beer-glass {
   position: absolute;
-  margin-top: -220px;        /* → je nach Höhe der tap-base */
+  margin-top: -225px;        /* → je nach Höhe der tap-base */
   left: 50%;
   transform: translateX(-50%);
   width: 60px;
   height: 100px;
   z-index: 15;
-  
-
   }
+
+
+
+
   .bar-container {
   margin-top: 280px;             /* ← vorher 60px oder mehr */
   padding-top: 0;
@@ -496,16 +507,19 @@ h1 {
     width: 86vw;
     gap: 10px;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-evenly;
     height: 100px;
     padding-bottom: 6px;
+    margin: 0 auto;
+    margin-top: -5px;
   }
   .bar-front .panel {
-    width: 28vw;
-  min-width: 80px;
-  max-width: 120px;
-  height: 70px;
-  margin-left: 12px;
+  width: 30vw;
+  min-width: 90px;
+  max-width: 130px;
+  height: 80px;
+  margin: 0 6px;
+  justify-content: space-evenly;
   }
 
    #container {
@@ -541,6 +555,74 @@ h1 {
     right: 12px;
   }
 }
+
+@media (max-width: 400px) {
+  .bar-front {
+    justify-content: space-evenly;
+    gap: 6px;
+    padding: 0 4px;
+  }
+
+  .bar-front .panel {
+    width: 26vw;
+    min-width: 60px;
+    max-width: 90px;
+    height: 60px;
+    margin: 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 300px) {
+  .bar-front .panel {
+    width: 26vw;
+    min-width: unset;
+    max-width: 90px;
+    height: 60px;
+    margin: 0 4px;
+  }
+
+  .bar-front {
+    gap: 4px;
+    justify-content: space-evenly;
+    flex-wrap: nowrap; /* oder wrap, wenn zwei oben, eine unten erwünscht ist */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 1570px) {
   html, body {
     height: auto;

@@ -122,7 +122,9 @@ handle.addEventListener("click", () => {
 
   // Strahl starten
   beerFlow.style.transition = "height 1s ease-in";
-  beerFlow.style.height = "385px";
+  const isMobile = window.innerWidth <= 750;
+beerFlow.style.height = isMobile ? "225px" : "385px";
+
 
   // Verzögert: Glasfüllung nach 300ms
   beerFill.style.height = "0";
