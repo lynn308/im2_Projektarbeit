@@ -45,7 +45,7 @@ function populateCityDropdown() {
   });
 }
 
-// ✅ Neue, bereinigte showData-Funktion (einmal definiert!)
+// ✅ Neue showData-Funktion mit Sorry-Nachricht
 function showData(filteredData) {
   container.innerHTML = '';
   container.style.display = 'block';
@@ -55,14 +55,14 @@ function showData(filteredData) {
   closeButton.textContent = "✖";
   container.appendChild(closeButton);
 
-  const title = document.createElement("h1");
-  title.classList.add("overlay-title");
-  title.textContent = "🍺 Your Brewery!";
-  container.appendChild(title);
-
   if (filteredData.length === 0) {
-    const noDataMessage = document.createElement("p");
-    noDataMessage.textContent = "Keine Brauereien gefunden.";
+    const noDataMessage = document.createElement("div");
+    noDataMessage.innerHTML = `
+      <h2 class="brewery-name">🍺 Sorry!</h2>
+      <p style="font-size: 18px; color: white; max-width: 600px;">
+        Leider gibt es keine passende Brauerei für deine Auswahl. Probiere eine andere Kombination.
+      </p>
+    `;
     container.appendChild(noDataMessage);
     return;
   }
@@ -84,6 +84,7 @@ function showData(filteredData) {
     container.appendChild(card);
   });
 }
+
 
 // Funktion zum Leeren des Bierglases
 function resetBeer() {
