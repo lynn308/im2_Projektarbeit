@@ -67,6 +67,12 @@ function showData(filteredData) {
     return;
   }
 
+  // 👉 Titel nur anzeigen, wenn Daten vorhanden sind
+  const title = document.createElement("h1");
+  title.classList.add("overlay-title");
+  title.textContent = "🍺 Your Brewery!";
+  container.appendChild(title);
+
   filteredData.forEach((element) => {
     const card = document.createElement("article");
     card.classList.add("card");
@@ -84,6 +90,7 @@ function showData(filteredData) {
     container.appendChild(card);
   });
 }
+
 
 
 // Funktion zum Leeren des Bierglases
