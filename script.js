@@ -45,7 +45,7 @@ function populateCityDropdown() {
   });
 }
 
-// ✅ Neue showData-Funktion mit Sorry-Nachricht
+// showData-Funktion mit Sorry-Nachricht
 function showData(filteredData) {
   container.innerHTML = '';
   container.style.display = 'block';
@@ -67,7 +67,7 @@ function showData(filteredData) {
     return;
   }
 
-  // 👉 Titel nur anzeigen, wenn Daten vorhanden sind
+  // Titel nur anzeigen, wenn Daten vorhanden sind
   const title = document.createElement("h1");
   title.classList.add("overlay-title");
   title.textContent = "🍺 Your Brewery!";
@@ -91,8 +91,6 @@ function showData(filteredData) {
   });
 }
 
-
-
 // Funktion zum Leeren des Bierglases
 function resetBeer() {
   beerFill.style.height = "0";
@@ -100,7 +98,7 @@ function resetBeer() {
   void beerFill.offsetWidth;
 }
 
-// Overlay schließen
+// Overlay schliessen
 document.body.addEventListener("click", (event) => {
   if (event.target.id === "close-overlay" || 
       (container.style.display === "block" && !container.contains(event.target))) {
@@ -109,7 +107,7 @@ document.body.addEventListener("click", (event) => {
   }
 });
 
-// 🍺 Zapfhahn-Klick
+// Zapfhahn-Klick
 handle.addEventListener("click", () => {
   const selectedType = dropdown.value;
   const selectedCity = cityDropdown.value;
