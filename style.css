@@ -33,6 +33,10 @@ h1 {
   margin: 5vh 0 5vh;
 }
 
+
+
+
+
 /* ======= TAP / ZAPFHAHN ======= */
 .tap {
   width: 200px;
@@ -103,6 +107,10 @@ h1 {
 .tap-connector-gold { top: -40px; width: 29px; height: 18px; z-index: 6; }
 .tap-connector-gold-bottom { top: 10px; width: 39px; height: 20px; z-index: 6; }
 
+
+
+
+
 /* ======= BEER ======= */
 .beer-glass {
   position: absolute;
@@ -152,6 +160,9 @@ h1 {
   z-index: 29;
   transition: height 1s ease-in;
 }
+
+
+
 
 /* ======= DROPDOWN & INTERFACE ======= */
 .interface-group {
@@ -213,6 +224,9 @@ h1 {
 .dropdown-column:last-child .connection-svg {
   transform: translateX(-30px);
 }
+
+
+
 
 /* ======= OVERLAY ======= */
 #container {
@@ -309,6 +323,9 @@ h1 {
   cursor: pointer;
 }
 
+
+
+
 /* ======= BAR ======= */
 .bar-container {
   position: relative;
@@ -351,6 +368,12 @@ h1 {
   box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
 }
 
+
+
+
+
+/* ======= Responsive Design ======= */
+/*1100px*/
 @media (max-width: 1100px) {
   .bar-container {
     width: 96vw;
@@ -414,6 +437,7 @@ h1 {
   }
 }
 
+/*750px*/
 @media (max-width: 750px) {
   html, body {
     overflow-x: hidden;
@@ -593,6 +617,7 @@ h1 {
   }
 }
 
+/*400px*/
 @media (max-width: 400px) {
   .bar-front {
     justify-content: space-evenly;
@@ -609,6 +634,8 @@ h1 {
   }
 }
 
+
+/*300px*/
 @media (max-width: 300px) {
   .bar-front .panel {
     width: 26vw;
